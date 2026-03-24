@@ -35,7 +35,7 @@ built on top of [crossterm](https://github.com/crossterm-rs/crossterm).
 The authoritative model is in [Concept.md](./Concept.md). Keep these boundaries:
 
 1. Event orchestration belongs to `promkit` (`Prompt` lifecycle).
-2. Widgets are state-to-view projection, without event-loop policy.
+2. `promkit-widgets` is state-to-view projection, without event-loop policy.
 3. Rendering concerns belong to `promkit-core`.
 
 When adding features, preserve these boundaries before optimizing code layout.
@@ -53,7 +53,7 @@ When adding features, preserve these boundaries before optimizing code layout.
 
 When implementing a change:
 
-1. Locate the boundary first (`promkit` vs `widgets` vs `core`).
+1. Locate the boundary first (`promkit` vs `promkit-widgets` vs `promkit-core`).
 2. Make the smallest coherent edit set.
 3. Update tests/examples/docs that demonstrate behavior.
 4. Run validation commands locally when possible.
